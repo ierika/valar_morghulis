@@ -19,6 +19,9 @@ class Region(TimeStampedModel):
 
     class Meta:
         ordering = ['name', 'continent']
+        unique_together = (
+            ('name', 'continent'),
+        )
 
     def __str__(self):
         return self.name
